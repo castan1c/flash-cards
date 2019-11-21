@@ -1,14 +1,26 @@
 
-<div>
-  <input placeholder="Add English word" type="text" [(ngModel)]="englishInputWord">
-  <input placeholder="Add Ukrainian word" type="text" [(ngModel)]="ukrainianInputWord">
-  <button (click)="submitWordPair()"> Submit </button>
+<div class="add-words">
+  <input
+    [(ngModel)]="englishInputWord"
+    class="add-words__input"
+    placeholder="Add English word"
+    type="text"
+  >
+  <input
+    [(ngModel)]="ukrainianInputWord"
+    class="add-words__input"
+    placeholder="Add Ukrainian word"
+    type="text"
+    >
+  <button (click)="submitWordPair()"
+    class="button"
+  > Submit </button>
 </div>
 
-<ul *ngFor="let wordPair of wordPairs">
-  <li>
-    <span> {{ wordPair.englishWord }} </span>
-    <span> {{ wordPair.ukrainianWord }} </span>
-    <button (click)="deleteWordPair(wordPair)"> Delete </button>
+<ul class="display-words">
+  <li *ngFor="let wordPair of wordPairs" class="display-words__word-pair">
+    <span class="display-words__word-pair__word"> {{ wordPair.englishWord }} </span>
+    <span class="display-words__word-pair__word"> {{ wordPair.ukrainianWord }} </span>
+    <button class="button" (click)="deleteWordPair(wordPair)"> Delete </button>
   </li>
 </ul>
