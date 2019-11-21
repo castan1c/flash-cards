@@ -9,7 +9,7 @@ import { WordsComponent } from 'src/app/components/words/words.component';
 const routes: Routes = [
   {
     path: 'words',
-    component: WordsComponent
+    component: WordsPageComponent
   }
 ];
 
