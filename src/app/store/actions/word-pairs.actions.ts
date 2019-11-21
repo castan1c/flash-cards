@@ -33,3 +33,4 @@ export class ClearWordPairs implements Action {
   public static readonly TYPE = WordPairsActionTypes.ClearWordPairs;
   public type = ClearWordPairs.TYPE;
 }
+

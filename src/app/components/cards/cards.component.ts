@@ -1,12 +1,15 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { Subscription } from 'rxjs';
+import { AutoUnsubscribe } from 'ngx-auto-unsubscribe';
 import { Store } from '@ngrx/store';
+
 
 import { IAppState } from 'src/app/store/app.store';
 import { getWordPairs } from 'src/app/store/selectors/word-pairs.selector';
 import { IWordPair } from 'src/app/interfaces/word-pair.interface';
 
+@AutoUnsubscribe()
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',

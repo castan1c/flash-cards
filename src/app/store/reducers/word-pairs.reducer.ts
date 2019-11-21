@@ -2,18 +2,16 @@ import { IWordPair } from '../../interfaces/word-pair.interface';
 
 import {
   SetWordPairs, DeleteWordPair, AddWordPair, ClearWordPairs
-} from '../actions/wordPairs.actions';
+} from '../actions/word-pairs.actions';
+
+
 
 export interface IState {
   wordPairs: Array<IWordPair>;
 }
 
 export const initialState: IState = {
-  wordPairs: [
-    { id: 0, englishWord: 'Hi', ukrainianWord: 'Привіт' },
-    { id: 1, englishWord: 'Mouse', ukrainianWord: 'Миша' },
-    { id: 3, englishWord: 'House', ukrainianWord: 'Дім' },
-  ]
+  wordPairs: []
 };
 
 export function wordPairsReducer(state = initialState, action: any): IState {

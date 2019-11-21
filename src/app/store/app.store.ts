@@ -1,5 +1,5 @@
 import { ActionReducerMap } from '@ngrx/store';
-import * as fromWordPairs from './reducers/wordPairs.reducer';
+import * as fromWordPairs from './reducers/word-pairs.reducer';
 
 export interface IAppState {
   wordPairs: fromWordPairs.IState;

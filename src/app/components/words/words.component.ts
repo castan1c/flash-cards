@@ -7,7 +7,7 @@ import { Store } from '@ngrx/store';
 import { IWordPair } from 'src/app/interfaces/word-pair.interface';
 import { IAppState } from 'src/app/store/app.store';
 import { getWordPairs } from 'src/app/store/selectors/word-pairs.selector';
-import { DeleteWordPair, AddWordPair } from 'src/app/store/actions/wordPairs.actions';
+import { DeleteWordPair, AddWordPair } from 'src/app/store/actions/word-pairs.actions';
 
 @Component({
   selector: 'app-words',
