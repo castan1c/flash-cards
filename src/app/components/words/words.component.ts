@@ -39,6 +39,7 @@ export class WordsComponent implements OnInit {
       };
 
       this.store.dispatch(new AddWordPair(newPair));
+      this.englishInputWord = this.ukrainianInputWord = '';
     } else {
       alert('Please fill all the forms!');
     }

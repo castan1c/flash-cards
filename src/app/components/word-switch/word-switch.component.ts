@@ -9,7 +9,7 @@ import { WordLanguages } from 'src/app/app.enum';
 })
 export class WordSwitchComponent implements OnInit {
   @Input() public wordPair: IWordPair;
-  public flipCard: boolean = false;
+  public flipCard = false;
 
   private currentWordLanguage: WordLanguages;
 
