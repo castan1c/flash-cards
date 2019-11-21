@@ -1,11 +1,16 @@
+@import 'src/app/styles/colors';
+
 .app-title {
   display: block;
   margin: 50px 0 30px;
   padding-left: 20px;
   color: white;
-  background-color: darkgray;
+  background-color: $fountainBlue;
   line-height: 100px;
+  border-radius: 5px;
+  box-shadow: 0px 5px 40px -10px $heavyMetal;
 }
+
 .page-navigator {
   display: flex;
   position: relative;
@@ -15,12 +20,16 @@
 
   &__link {
     position: relative;
-    padding-right: 20px;
+    margin-right: 20px;
+    color: $westSide;
 
     &:first-child::after {
       position: absolute;
-      right: 10px;
-      content: '|';
+      right: -10px;
+      height: 20px;
+      border: 1px solid $heavyMetal;
+      bottom: 5px;
+      content: '';
     }
   }
 
@@ -28,7 +37,7 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    border: 1px solid grey;
+    border: 1px solid $fountainBlue;
     content: '';
   }
 }

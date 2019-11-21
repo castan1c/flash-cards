@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { CardsPageComponent } from './cards-page.component';
 import { CardsComponent } from 'src/app/components/cards/cards.component';
+import { WordSwitchComponent } from 'src/app/components/word-switch/word-switch.component';
 
 const routes: Routes = [
   {
@@ -15,7 +16,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     CardsPageComponent,
-    CardsComponent
+    CardsComponent,
+    WordSwitchComponent
   ],
   imports: [
     CommonModule,
@@ -24,6 +26,7 @@ const routes: Routes = [
   exports: [
     CardsPageComponent,
     CardsComponent,
+    WordSwitchComponent,
     RouterModule
   ]
 })

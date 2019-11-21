@@ -18,7 +18,7 @@
 </div>
 
 <ul class="display-words">
-  <li *ngFor="let wordPair of wordPairs" class="display-words__word-pair">
+  <li *ngFor="let wordPair of wordPairs$ | async" class="display-words__word-pair">
     <span class="display-words__word-pair__word"> {{ wordPair.englishWord }} </span>
     <span class="display-words__word-pair__word"> {{ wordPair.ukrainianWord }} </span>
     <button class="button" (click)="deleteWordPair(wordPair)"> Delete </button>

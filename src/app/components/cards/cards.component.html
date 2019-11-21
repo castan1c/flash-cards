@@ -1,1 +1,4 @@
-<p>cards works!</p>
+<div class="card-controls">
+  <button (click)="changeWordPair()" class="button">Next Word</button>
+</div>
+<app-word-switch [wordPair]="wordPairs[currentWordIndex]"></app-word-switch>

@@ -1,5 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { WordPair } from 'src/app/interfaces/word-pair.interface';
+
+import { Observable } from 'rxjs';
+
+import { Store } from '@ngrx/store';
+
+import { IWordPair } from 'src/app/interfaces/word-pair.interface';
+import { IAppState } from 'src/app/store/app.store';
+import { getWordPairs } from 'src/app/store/selectors/word-pairs.selector';
+import { DeleteWordPair, AddWordPair } from 'src/app/store/actions/wordPairs.actions';
 
 @Component({
   selector: 'app-words',
@@ -11,30 +19,28 @@ export class WordsComponent implements OnInit {
   public englishInputWord: string;
   public ukrainianInputWord: string;
 
-  wordPairs: Array<WordPair> = [
-    { englishWord: 'Hi', ukrainianWord: 'Привіт' },
-    { englishWord: 'Mouse', ukrainianWord: 'Миша' },
-    { englishWord: 'House', ukrainianWord: 'Дім' },
-  ];
+  public wordPairs$: Observable<Array<IWordPair>>;
 
-  constructor() { }
+  constructor(private store: Store<IAppState>) { }
 
-  ngOnInit() {
+  public ngOnInit(): void {
+    this.wordPairs$ = this.store.select(getWordPairs);
   }
 
-  public deleteWordPair(wordPair: WordPair): void {
-    const wordIndex = this.wordPairs.indexOf(wordPair);
-
-    this.wordPairs.splice(wordIndex, 1);
+  public deleteWordPair(wordPair: IWordPair): void {
+    this.store.dispatch(new DeleteWordPair(wordPair));
   }
 
   public submitWordPair(): void {
     if (this.englishInputWord && this.ukrainianInputWord) {
-      const newPair = { englishWord: this.englishInputWord, ukrainianWord: this.ukrainianInputWord };
+      const newPair = {
+        englishWord: this.englishInputWord,
+       ukrainianWord: this.ukrainianInputWord
+      };
 
-      this.wordPairs.push(newPair);
+      this.store.dispatch(new AddWordPair(newPair));
     } else {
-      alert('Please!');
+      alert('Please fill all the forms!');
     }
   }
 

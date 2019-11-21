@@ -1,8 +1,10 @@
 @import 'src/app/styles/common';
+@import 'src/app/styles/fonts';
+@import 'src/app/styles/reset';
 
-* {
-  border: none;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body {
+  font-family: Poppins;
 }
+
+
+
