@@ -9,6 +9,7 @@ import { WordLanguages } from 'src/app/app.enum';
 })
 export class WordSwitchComponent implements OnInit {
   @Input() public wordPair: IWordPair;
+  public flipCard: boolean = false;
 
   private currentWordLanguage: WordLanguages;
 
@@ -25,6 +26,11 @@ export class WordSwitchComponent implements OnInit {
   }
 
   public changeLanguage(): void {
+    this.flipCard = true;
+    
+    setTimeout(() => {
+      this.flipCard = false;
+    }, 1000);
     this.currentWordLanguage = this.currentWordLanguage === WordLanguages.ENG
       ? WordLanguages.UA
       : WordLanguages.ENG;

@@ -1,4 +1,6 @@
-<div (click)="changeLanguage()"
-  class="flip-card"> 
+<div
+  (click)="changeLanguage()"
+  class="flip-card"
+  [class.flip-animation]="flipCard">
   <span class="flip-card__word"> {{ getWordToDisplay() }} </span>
 </div>
