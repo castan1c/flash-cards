@@ -27,10 +27,10 @@ export class WordSwitchComponent implements OnInit {
 
   public changeLanguage(): void {
     this.flipCard = true;
-    
+
     setTimeout(() => {
       this.flipCard = false;
-    }, 1000);
+    }, 800);
     this.currentWordLanguage = this.currentWordLanguage === WordLanguages.ENG
       ? WordLanguages.UA
       : WordLanguages.ENG;
