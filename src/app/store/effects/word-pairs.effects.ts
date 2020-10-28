@@ -23,7 +23,6 @@ export class WordPairsEffects {
         AddWordPair.TYPE,
         ClearWordPairs.TYPE
       ),
-      tap(() => console.log('i worked')),
       tap(() => this.localStorage.saveDataToLocalStorage()),
     );
 }
